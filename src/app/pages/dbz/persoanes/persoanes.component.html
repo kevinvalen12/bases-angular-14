@@ -1,0 +1,45 @@
+<h3>Persoanjes</h3>
+    <hr>
+    <!-- 
+        correcion en la estructura del li se consulto buenas practicas con
+            IA y recomendo una mejor estructura ya que la anterios era un 
+            poco confusa 
+    -->
+    <ul>
+        <li *ngFor="let character of listPersonajes"
+            [ngClass]="character.power > 6000 ?  'positivo' : 'negativo' "
+        >
+            <!-- ng-container agrupa elemntos de ngIf y ngfor  -->
+            <ng-container *ngIf="character.power > 6000; else devil">
+                {{character.nombre | titlecase}} - {{character.power | number }}
+            </ng-container>
+            <!-- define estructura de el html reutilizable o condicionaes 
+                que no se muestra hasta cunpla una  funcio -->
+            <ng-template #devil >
+                <li> persoaje debil</li>
+            </ng-template>  
+        </li>
+        
+    </ul>
+
+
+
+
+<!-- 
+<div class="col">
+        <h3>Persoanjes</h3>
+        <hr>
+        <ul *ngFor="let character of characteres"
+            [ngClass]="character.power > 6000 ?  'positivo' : 'negativo' "
+        >
+            <li 
+                *ngIf="character.power > 6000; else devil"
+            >
+                {{character.nombre}} - {{character.power}}
+            </li>
+            <ng-template #devil >
+               <li> persoaje debil</li>
+            </ng-template>
+        </ul>
+    </div>
+-->

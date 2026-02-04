@@ -1,0 +1,31 @@
+<p>{{nombre}}</p>
+
+<dl>
+    <td> Nombre: </td>
+    <dd> {{nombre}} </dd>
+
+    <td> Edad: </td>
+    <dd> {{edad}} </dd>
+
+    <td> Edad: </td>
+    <dd> {{obtenerNombre()}} </dd>
+
+    <td> capitalizado: </td>
+    <dd> {{nombre | uppercase}} </dd>
+</dl>
+
+<button (click)="cambiarHeroe()">
+    cambiar Hero
+</button>
+
+<button  (click)="cambiarEdad()">
+    cambiar edad
+</button>
+
+<button (click)="primerHeror()">
+    rest heroe
+</button>
+
+<div>
+    <app-listado></app-listado>
+</div>

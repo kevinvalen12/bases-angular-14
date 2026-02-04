@@ -1,0 +1,21 @@
+<h3>agregear</h3>
+<hr>
+<!-- manera corecta es trabajar con el submit en la etiqueta form -->
+<form [formGroup]="formularioDbz" (ngSubmit)="guardarDatos()">
+    <input 
+        id="nombre"
+        type="text" 
+        placeholder="Nombre"
+        formControlName="nombre" 
+    />
+    <input 
+        id="ower"
+        type="number" 
+        placeholder="Poder" 
+        formControlName="power"
+    />
+
+    <button type="submit">
+        agregear
+    </button>
+</form>

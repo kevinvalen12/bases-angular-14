@@ -1,0 +1,19 @@
+
+<div *ngIf="heroeBorrado.length > 0; else noBorrar">
+    <!-- heroeBorrado si esta basio se va a ocultar  -->
+    <h3>Heroe borrado</h3><small *ngFor="let borado of heroeBorrado">Heroe: {{borado.nombre}}</small>
+</div>
+<ng-template #noBorrar>
+    <h3> no a borrado nada </h3>
+</ng-template>
+
+
+<ul >
+    <li *ngFor="let heroes of heroes">
+        Heroe: {{heroes.nombre}} - Identidad: {{heroes.identidad}} - Fuerza: {{heroes.fuerza}}
+    </li>
+</ul>
+
+<button (click)="borrarHeroe()">
+    borrar
+</button>
